@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Ajax</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <section>
+            <h1>Posts</h1>
+            <div id="posts"></div>
+            <a class="button" id="loadPost">Carregar mais posts</a>
+        </section>
+        <hr />
+        <section>
+            <h1>Github</h1>
+            <div id="main"></div>
+            <input type="text" placeholder="nome do usuário" id="username">
+        </section>
+        <section class="tabela">
+            <h1>Menu</h1>
+            <div class="menu">
+            <div class="comida">
+            <div id="foodlist">
+               
+            </div>
+            <table class="table-bordered">
+                <tbody id="food">
+                    
+                </tbody>
+            </table>
+            </div>
+            <div class="descricao">
+                <a class="button" onclick="loadDescri()" id="loadDescr">Mostra area</a>
+                <table class="table-bordered">
+                    <tbody id="adicional">
+                        
+                    </tbody>
+                </table>
+            </div>
+</div>
+
+        </section>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/posts.js"></script>
+    <script src="./js/tabela.js"></script>
+</body>
+</html>
+<!--objetivo:
+criar uma página com chamadas assíncronas para uma Pi públic como a dO Github ou JsonPlaceHolder
+analisar o código disponibilizado e testar melhorias 
+melhorias de interface-->
