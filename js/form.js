@@ -16,12 +16,14 @@ function isEmpty(elem){
 }
 
 function validaEmail(elem){
+    //emailregex
+    //pode fazer tanto no match quanto test
     return elem.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? '' : `Digite um <strong>e-mail</strong> válido`;
 }
-
+//para validar cep
 function validaCEP(elem){
-    if(!elem.value.match(/^[0-9]{8}/)) 
-        return `Digite um CEP válido.`;
+    if(!elem.value.match(/^[0-9]{8}$/)) 
+        return `Digite um <strong> CEP </strong> válido.`;
     else return '';
 }
 
@@ -42,31 +44,38 @@ form.addEventListener('submit', function(event){
 
     let msg = [];
     let markup = '';
-   
+
+   //pra pegar todos os elementos que tem essa classe
     Array.from(notNull).forEach(field => {
         let fieldState = isEmpty(field);
         if(fieldState) 
             msg.push(fieldState);
     });
+    //não é bom fazer muito uso de addEventListener = diminui a performance
 
-    const isEmail = validaEmail(email);
-    if(isEmail) msg.push(isEmail);
+    const isEmail = validaEmail(email);//validação do email
+    if(isEmail) msg.push(isEmail); //se houver retorno , dá um push
 
     const isCEP = validaCEP(cep);
     if(isCEP.length > 0) {
         msg.push(isCEP);
     } else {  
+        //injeção de script
         const script = document.createElement('script');
         script.src = 'https://viacep.com.br/ws/' + cep.value + '/json?callback=updateAdress';
-        document.body.appendChild(script);
+        document.body.appendChild(script);//injeta o script no body
     }
 
     msg.forEach(item => {
-        markup += `<p>${item}</p>` 
+        markup += `<p>${item}</p>` //retorna uma linha de parágrafo
     });
 
-    mensagem.innerHTML = markup;
-
-    // if(msg.length == 0)  form.submit();
+    
+    if(msg.length == 0){
+        form.submit(); //faz a o envio do formulário
+    } 
+    else{
+        mensagem.innerHTML = markup;
+    }
 
 });

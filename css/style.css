@@ -1,10 +1,26 @@
 * {
     border: 0;
-    margin: 5px;
+    margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 62.5%;
     box-sizing: border-box;
+}
+header, footer{
+    display: block;
+    background-color: #223f5e;
+    color: white;
+    width:100%
+}
+header{
+    text-align: center;
+    padding:30px;
+}
+header p{
+        background-color: #8d68ae;
+}
+footer{
+    padding: 10px;
 }
 
 body {
@@ -44,10 +60,13 @@ p {
 }
 
 input[type="text"] {
-    border: 1px solid #000;
     border-radius: 5px;
     font-size: 1.5rem;
     padding: 1rem;
+    color: #000;
+    background-color: #dad3d3;
+    padding-left: 3rem;
+    border-radius: 20px;
 }
 
 .button {
@@ -107,4 +126,7 @@ tr{
 }
 #loadDescr{
     padding-bottom: 2.3rem;
+}
+.mensagem{
+    padding:20px;
 }

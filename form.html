@@ -7,51 +7,107 @@
     <title>Validação de formulário</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/form.css">
+    <script src="https://kit.fontawesome.com/678cb59af9.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<header>
+    <h3>Validação de formulário</h3>
+    <p>Com o uso de API</p>
+</header>
 <div class="container">
     <form action="" id="form">
-        <div class="input-group">
-            <label for="nome">Nome</label>
-            <input type="text" class="not-null" placeholder="Nome" id="nome" name="nome">
-        </div>
-        <div class="input-group">
+        <div class="row">
+            <div class="column">
+                <div class="input-group">
+                  <label for="nome">Nome</label>
+                 <i class="fas fa-user"></i>
+                 <input type="text" class="not-null" placeholder="Nome" id="nome" name="nome">
+                 </div>
+            </div>
+            <div class="column">
+            <div class="input-group">
             <label for="email">E-mail</label>
+            <i class="fas fa-envelope"></i>
             <input type="text"  class="not-null" placeholder="E-mail" id="email" name="email">
+        </div>           
+            </div>    
+
         </div>
-        <div class="input-group">
+        
+
+        <div class="row">
+            <div class="column">
+                <div class="input-group">
             <label for="CPF">CPF</label>
+            <i class="fas fa-id-card"></i>
             <input type="text"  class="not-null" placeholder="CPF" id="cpf" name="cpf">
         </div>
-        <div class="input-group">
+            </div>
+<div class="column">
+    <div class="input-group">
             <label for="CEP">CEP</label>
-            <input type="text"  class="not-null" placeholder="CEP" id="cep" name="cep">
+            <i class="fas fa-house"></i>
+            <input type="text"  class="not-null" placeholder="CEP" id="cep" name="cep" size="8">
         </div>
-
+    </div>
+  
+        </div>
+        
+        
          <div class="address">
-            <div class="input-group">
+
+            <div class="row">
+                <div class="column">
+                    <div class="input-group">
                 <label for="rua">Rua</label>
                 <input type="text" id="rua" size="50">
             </div>
-            <div class="input-group">
+                </div>
+            <div class="column">
+                <div class="input-group">
                 <label for="bairro">Bairro</label>
                 <input type="text" id="bairro" size="30">
             </div>
-            <div class="input-group">
-                <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" size="30">
+            </div>    
+            
             </div>
+            
+            <div class="row">
+                <div class="column">
+                    <div class="input-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" size="20">
+            </div>
+                </div>
+ <div class="column">
+
             <div class="input-group">
                 <label for="uf">UF</label>
                 <input type="text" id="uf" size="2">
             </div>
+ </div>
+
+            </div>
+           
         </div>
-        <div class="input-group">
+        <div class="row muda">
+            <div class="column">
+                  <div class="input-group botao">
             <button>Cadastrar</button>
         </div>
+            </div>
+            <div class="column message">
+                 <div id="mensagem"> </div>
+        </div>
+            </div>
+          
+       
+        
     </form>
-    <div id="mensagem"> </div>
+    
 </div>
+<footer><p>Desenvolvido por Beatriz Leite</p></footer>
 <script src="./js/form.js"></script>
 </body>
 </html>
